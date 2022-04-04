@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
         scaffoldBackgroundColor: const Color(0xFF1D1C1C),
@@ -209,6 +211,22 @@ class _MyHomePageState extends State<MyHomePage> {
           stack(),
           const SizedBox(height: 70),
           Expanded(child: lists),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color(0xFF242424),
+        items: [
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset('images/1.svg'), label: ''),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset('images/2.svg'), label: ''),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset('images/3.svg'), label: ''),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset('images/4.svg'), label: ''),
+          BottomNavigationBarItem(
+              icon: Image.asset('images/5.png', height: 35, width: 35),
+              label: ''),
         ],
       ),
     );
